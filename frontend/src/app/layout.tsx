@@ -23,7 +23,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
           <footer className="py-8 text-center text-sm text-slate-400 font-medium border-t border-white/5 bg-slate-900/20 backdrop-blur-sm">
-            Built with 💻 by <a href="https://github.com/prateek31-ops" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">Prateek Suthar</a>
+            Built by Prateek Suthar
           </footer>
         </div>
         <Toaster theme="dark" position="bottom-right" />
