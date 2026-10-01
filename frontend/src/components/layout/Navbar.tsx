@@ -44,7 +44,7 @@ export function Navbar() {
               );
             })}
             <a 
-              href="https://github.com/krishansuthar/GNANI" 
+              href="https://github.com/prateek31-ops/Gnani_ai_project" 
               target="_blank" 
               rel="noreferrer"
               className="text-slate-300 hover:text-white transition-colors ml-4 border-l border-slate-700 pl-4"
