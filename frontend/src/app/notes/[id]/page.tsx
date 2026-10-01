@@ -215,11 +215,11 @@ export default function NoteDetailPage() {
               key="completed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="h-[calc(100vh-250px)] min-h-[600px] w-full"
+              className="w-full"
             >
-              <PanelGroup direction="horizontal" className="h-full w-full">
+              <div className="flex flex-col lg:flex-row gap-6 w-full lg:h-[calc(100vh-250px)] lg:min-h-[600px]">
                 {/* Summary Panel */}
-                <Panel defaultSize={33} minSize={20} className="flex flex-col">
+                <div className="w-full lg:w-1/3 flex flex-col min-h-[400px]">
                   <Card className="p-6 border-purple-500/20 bg-purple-500/5 h-full relative overflow-hidden flex flex-col">
                     <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
                       <Sparkles className="w-24 h-24 text-purple-400" />
@@ -248,14 +248,14 @@ export default function NoteDetailPage() {
                       </div>
                     </div>
                   </Card>
-                </Panel>
+                </div>
 
-                <PanelResizeHandle className="w-4 flex items-center justify-center cursor-col-resize group">
-                  <div className="w-1 h-8 bg-slate-700 rounded-full group-hover:bg-blue-500 transition-colors" />
-                </PanelResizeHandle>
+                <!--
+                  
+                -->
 
                 {/* Transcript Panel */}
-                <Panel defaultSize={67} minSize={30} className="flex flex-col">
+                <div className="w-full lg:w-2/3 flex flex-col min-h-[400px]">
                   <Card className="p-6 h-full flex flex-col">
                     <div className="flex items-center gap-2 mb-6 text-slate-200">
                       <FileText className="w-5 h-5 text-blue-400" />
@@ -274,8 +274,8 @@ export default function NoteDetailPage() {
                       )}
                     </div>
                   </Card>
-                </Panel>
-              </PanelGroup>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -283,3 +283,4 @@ export default function NoteDetailPage() {
     </div>
   );
 }
+

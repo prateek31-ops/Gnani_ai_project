@@ -20,12 +20,12 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="bg-primary/20 p-2 rounded-lg">
-              <FileAudio className="h-6 w-6 text-primary" />
+              <FileAudio className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-white">AudioNotes</span>
+            <span className="font-bold text-lg sm:text-xl tracking-tight text-white hidden sm:block">AudioNotes</span>
           </Link>
           
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav className="flex items-center space-x-3 sm:space-x-6 text-xs sm:text-sm font-medium">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
