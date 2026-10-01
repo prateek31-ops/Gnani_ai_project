@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+aiosqlite
+python-multipart
+python-dotenv
+pydantic-settings
+httpx
+google-generativeai
+aiofiles
+pydub==0.25.1
+audioop-lts==0.2.2
+groq==1.7.0
