@@ -233,7 +233,7 @@ export default function ArchitecturePage() {
                 <h4 className="font-medium flex items-center gap-2 text-amber-400">
                   <AlertCircle className="w-4 h-4" /> Quotas
                 </h4>
-                <p className="text-sm text-muted-foreground">Gemini quota exceedences trigger graceful error messages in the summary panel.</p>
+                <p className="text-sm text-muted-foreground">LLM API quota exceedences trigger graceful error messages in the summary panel.</p>
               </div>
               <div className="space-y-2">
                 <h4 className="font-medium flex items-center gap-2 text-red-400">
@@ -257,7 +257,7 @@ export default function ArchitecturePage() {
               { icon: <Database />, name: "SQLite", desc: "SQLAlchemy & aiosqlite" },
               { icon: <Globe />, name: "TailwindCSS", desc: "Styling & Framer Motion" },
               { icon: <BrainCircuit />, name: "Gnani API", desc: "ASR Transcription" },
-              { icon: <BrainCircuit />, name: "Gemini API", desc: "LLM Summarization" },
+              { icon: <BrainCircuit />, name: "Groq API", desc: "LLM Summarization (Qwen)" },
               { icon: <Waves />, name: "pydub", desc: "Audio Processing" },
               { icon: <HardDrive />, name: "Local FS", desc: "File Storage" },
             ].map((tech, i) => (
@@ -326,7 +326,7 @@ export default function ArchitecturePage() {
                     <Zap className="w-5 h-5 text-indigo-400 shrink-0" />
                     <div>
                       <strong className="block mb-1">Streaming Responses</strong>
-                      <span className="text-sm text-muted-foreground">Stream the Gemini summary generation in real-time to the UI as it's being written.</span>
+                      <span className="text-sm text-muted-foreground">Stream the Groq summary generation in real-time to the UI as it's being written.</span>
                     </div>
                   </div>
                 </div>

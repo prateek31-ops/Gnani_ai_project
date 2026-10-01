@@ -1,6 +1,6 @@
 # Audio Notes Platform 🎙️
 
-Welcome to the **Audio Notes Platform**! This is a full-stack web application that allows users to upload audio files of any length, transcribes them using the **Gnani ASR API**, and generates a concise summary using the **Google Gemini API**. 
+Welcome to the **Audio Notes Platform**! This is a full-stack web application that allows users to upload audio files of any length, transcribes them using the **Gnani ASR API**, and generates a concise summary using the **Groq API (Qwen 3.8-27B)**. 
 
 The platform is designed to be fully asynchronous, beautifully animated, and highly robust to handle real-world API constraints.
 
@@ -17,7 +17,7 @@ sequenceDiagram
     participant Backend as FastAPI Server
     participant DB as SQLite DB
     participant Gnani as Gnani ASR API
-    participant Gemini as Gemini AI API
+    participant Groq as Groq API (Qwen 27B)
 
     User->>Frontend: Upload Audio File (.m4a, .wav)
     Frontend->>Backend: POST /api/notes/upload
@@ -25,14 +25,14 @@ sequenceDiagram
     Backend-->>Frontend: Return Note ID (200 OK)
     
     rect rgb(20, 20, 30)
-    Note over Backend,Gemini: Background Processing Task
+    Note over Backend,Groq: Background Processing Task
     Backend->>DB: Update Status to "uploading"
     Backend->>Backend: Chunk Audio (25s segments)
     Backend->>Gnani: Transcribe Chunks (with retries)
     Gnani-->>Backend: Return Transcript
     Backend->>DB: Update Status to "summarizing"
-    Backend->>Gemini: Generate Summary
-    Gemini-->>Backend: Return Summary
+    Backend->>Groq: Generate Summary
+    Groq-->>Backend: Return Summary
     Backend->>DB: Update Status to "completed"
     end
     
